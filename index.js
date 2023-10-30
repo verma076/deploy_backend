@@ -3,7 +3,9 @@ const { connection } = require("./db")
 const {userRouter} = require("./routes/user.routes")
 const { postRouter } = require("./routes/post.routes")
 const app=express()
+const cors=require("cors")
 app.use(express.json())
+app.use(cors())
 
 app.get("/",(req,res)=>{
     res.status(200).send({"msg":"welcome to the home page"})
